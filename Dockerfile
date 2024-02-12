@@ -9,6 +9,9 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir --default-timeout=120 -r requirements.txt
 
+# Copy the application files to the container
+COPY . .
+
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 

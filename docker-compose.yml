@@ -5,12 +5,11 @@ services:
     build: .
     ports:
       - "8000:8000"
-    volumes:
-      - C:\Code\DevSecOps\app:/app
     depends_on:
       - mongo
     environment:
       - MONGO_URL=mongodb://mongo:27017/
+    restart: unless-stopped
 
   mongo:
     image: mongo
